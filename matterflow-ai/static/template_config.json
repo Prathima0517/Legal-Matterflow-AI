@@ -1,0 +1,40 @@
+{
+  "default_template": {
+    "name": "default template",
+    "path": "static/templateData/default_template.json"
+  },
+  "templates": [
+    {
+      "name": "3rd Party Actions (New)",
+      "path": "static/templateData/3rdPartyActionsNewTemplate.json"
+    },
+    {
+      "name": "Litigation/Dispute (New)",
+      "path": "static/templateData/Litigation_DisputeTemplate.json"
+    },
+     {
+      "name": "Litigation/Dispute",
+      "path": "static/templateData/Litigation_DisputeTemplate.json"
+    },
+    {
+      "name": "Potential Dispute",
+      "path": "static/templateData/PotentialDisputeTemplate.json"
+    },
+    {
+      "name": "Regulatory",
+      "path": "static/templateData/RegulatoryTemplate.json"
+    },
+      {
+      "name": "Patent Prosecution",
+      "path": "static/templateData/PatentProsecutionTemplate.json"
+    },
+    {
+      "name": "Transactions & Deals (New)",
+      "path": "static/templateData/TransactionsAndDealsNewTemplate.json"
+    },
+    {
+     "name":"Transactions",
+     "path":"static/templateData/TransactionTemplate.json"
+    }
+  ]
+}

@@ -1,0 +1,605 @@
+{
+  "template_name": "TransactionTemplate",
+  "fields": [
+    {
+      "field_name": "Full Matter Name/Parties Involved",
+      "field_notes": "This field is displayed only in the matter profile.  For Patent Prosecution matters, the field name is \"Full Matter Name,\" and should be used for the full invention name used by your company.",
+      "field_type": "Text",
+      "sample_data": "Acme Corp. v. Widget Co."
+    },
+    {
+      "field_name": "Short Matter Name",
+      "field_notes": "Short name is always used when displaying a list of matters.",
+      "field_type": "Text",
+      "sample_data": "Acme v. Widget"
+    },
+    {
+      "field_name": "Matter Group",
+      "field_notes": "Although this field is displayed in the matter profile, it is editable only in the matter options for the matter.",
+      "field_type": "Other",
+      "sample_data": "Patent Litigation"
+    },
+    {
+      "field_name": "Lead Company Person",
+      "field_notes": "Primary company person or in-house counsel responsible for the matter.",
+      "field_type": "User",
+      "sample_data": "jdoe"
+    },
+    {
+      "field_name": "#2 Company Person",
+      "field_notes": "This field can be used to identify, e.g. a co-lead attorney, or the responsible paralegal for matter.",
+      "field_type": "User",
+      "sample_data": "asmith"
+    },
+    {
+      "field_name": "Organizational Unit",
+      "field_notes": "Primary company entity/division/unit for whom the legal work is being performed.  This field also affects security and access control to the matter.",
+      "field_type": "List",
+      "sample_data": "Legal Department"
+    },
+    {
+      "field_name": "Practice Group",
+      "field_notes": "Primary group within the law department who is performing/overseeing the legal work.  This field also affects security and access control to the matter.",
+      "field_type": "List",
+      "sample_data": "Intellectual Property"
+    },
+    {
+      "field_name": "Business Manager",
+      "field_notes": "Free form field to identify the primary business contact.",
+      "field_type": "Text",
+      "sample_data": "John Smith"
+    },
+    {
+      "field_name": "Matter ID",
+      "field_notes": "This field is a unique reference number that can be used to identify the matter. Tracker can be setup to automatically generate the number for each new matter created, or it can be manually entered by users (although the number must be unique) - access the Miscellaneous Matter Options page to change the setting.",
+      "field_type": "Text",
+      "sample_data": "MATTER-2023-001"
+    },
+    {
+      "field_name": "Associated Matter ID",
+      "field_notes": "This field captures the unique identifier used in an associated system.  Capturing this field in Tracker allows the user to reference back to the record or matter in an associated system.",
+      "field_type": "Text",
+      "sample_data": "ASSOC-2023-001"
+    },
+    {
+      "field_name": "Associated Matter Data",
+      "field_notes": "This is a custom text field available for Matter Uploader functionality.",
+      "field_type": "Text",
+      "sample_data": "Additional data here"
+    },
+    {
+      "field_name": "Associated Matter URL",
+      "field_notes": "This field allows the Tracker user to enter the URL address of the associated system for quick access and reference back to the associated system. Upon saving, the text that is entered for this field becomes hyperlinked.",
+      "field_type": "Text",
+      "sample_data": "http://example.com/matter/12345"
+    },
+    {
+      "field_name": "Lead Firm (Office)",
+      "field_notes": "Designation of the lead firm for the matter (displayed only if the matter options specify that there is a lead firm for the matter).",
+      "field_type": "Other",
+      "sample_data": "Jones Day"
+    },
+    {
+      "field_name": "Lead Outside Counsel",
+      "field_notes": "Designation of the lead attorney at the lead firm (displayed only if the matter options specify that there is a lead firm for the matter).",
+      "field_type": "User",
+      "sample_data": "mjones"
+    },
+    {
+      "field_name": "Lead Firm Fee Arrangement",
+      "field_notes": "Pick list of fee arrangements (list not editable).",
+      "field_type": "List",
+      "sample_data": "Contingency Fee"
+    },
+    {
+      "field_name": "Lead Firm Fee Comment",
+      "field_notes": "Text box to provide a description of the fee arrangement.",
+      "field_type": "Text",
+      "sample_data": "30% contingency fee"
+    },
+    {
+      "field_name": "Lead Firm Client & Matter Data",
+      "field_notes": "This field is editable only by the lead law firm in the matter.  In Tracker 7.0, the lead firm can specify unlimited matter numbers for the matter.  The field is always displayed if there is a lead firm.",
+      "field_type": "Other",
+      "sample_data": "Client: Acme Corp.; Matter: Patent Infringement"
+    },
+    {
+      "field_name": "Additional Firms",
+      "field_notes": "This field is not editable in the matter profile.  Instead, Tracker automatically fills in this field based on the participants in the matter.",
+      "field_type": "Other",
+      "sample_data": "Co-counsel details here"
+    },
+    {
+      "field_name": "Local Firm/Agent",
+      "field_notes": "Text box for designating the local counsel, phone number, fax number, etc.",
+      "field_type": "Text",
+      "sample_data": "Local Counsel, (123) 456-7890"
+    },
+    {
+      "field_name": "Matter Type (Template)",
+      "field_notes": "Although this field is displayed in the matter profile, it is editable only in the matter options for the matter.",
+      "field_type": "Other",
+      "sample_data": "Litigation"
+    },
+    {
+      "field_name": "Substantive law",
+      "field_notes": "This is a pick list, which can have up to 3-tiers.",
+      "field_type": "List",
+      "sample_data": "Patent Law"
+    },
+    {
+      "field_name": "Start Date",
+      "field_notes": "Date that the matter began (different than the matter created date).",
+      "field_type": "Date",
+      "sample_data": "2023-01-15"
+    },
+    {
+      "field_name": "Matter Description",
+      "field_notes": "This is the description field, but depending on the type of matter will have a slightly different name.  Litigation: \"Summary of Dispute (Cause of Action)\"; Patent: \"Abstract/Description\"; Trademark Registration: \"Descriptions of Goods/Services.\"",
+      "field_type": "Text",
+      "sample_data": "Description of the matter goes here."
+    },
+    {
+      "field_name": "Case Summary for Audit Letter",
+      "field_notes": "This field is available only in Litigation/Dispute matters and in Filing matters.  NOTE: For Patent Prosecution matters (and other new Filing matters), the field name is \"Patent Claims,\" and is used for saving the content of all of the patent claims in a patent application.",
+      "field_type": "Text",
+      "sample_data": "Summary of the case for audit letter."
+    },
+    {
+      "field_name": "Claims",
+      "field_notes": "This field allows you to specifically track causes of action, and is available only in Litigation/Dispute matter types (templates).  Note about the field type:  This field is a special, customizable pick list that allows users to select multiple choices.  For example, the list could contain a list of the types of employment discrimination claim types (e.g. age, race, gender).  Some or all of these causes of action can be selected for a given case.",
+      "field_type": "Multi-Pick List",
+      "sample_data": "Breach of Contract, Negligence"
+    },
+    {
+      "field_name": "Key Issues",
+      "field_notes": "This field can be used to supplement the matter description field with the key issues affecting the matter.",
+      "field_type": "Text",
+      "sample_data": "Key issues in the matter."
+    },
+    {
+      "field_name": "Adverse Firm(s) & Attorney(s)",
+      "field_notes": "Text box for designating opposing counsel, phone number, fax number, etc.",
+      "field_type": "Text",
+      "sample_data": "Opposing Counsel, (987) 654-3210"
+    },
+    {
+      "field_name": "Country",
+      "field_notes": "For technical and functional reasons, this field is always required in every matter in Legal Tracker.",
+      "field_type": "List",
+      "sample_data": "United States"
+    },
+    {
+      "field_name": "State",
+      "field_notes": "If the country is U.S., the field is labeled \"State.\" If the country is non-U.S. the field is labeled \"Province/Region.\"  Also, if the matter is a Litigation/Dispute matter, the field will contain a selection of the court/forum.",
+      "field_type": "Other",
+      "sample_data": "California"
+    },
+    {
+      "field_name": "Trial Date",
+      "field_notes": "This field can be used only in the following matter types (templates):  Litigation/Dispute, 3rd-Party Actions (e.g. Subpoenas), and \"Other.\"",
+      "field_type": "Date",
+      "sample_data": "2023-06-01"
+    },
+    {
+      "field_name": "Date Served",
+      "field_notes": "This field can be used only in the following matter types (templates):  Litigation/Dispute and 3rd-Party Actions (e.g. Subpoenas).",
+      "field_type": "Date",
+      "sample_data": "2023-05-15"
+    },
+    {
+      "field_name": "Date of Loss",
+      "field_notes": "This field can be used only in the following matter types (templates):  Litigation/Dispute, 3rd-Party Actions (e.g. Subpoenas), and \"Other.\"",
+      "field_type": "Date",
+      "sample_data": "2023-04-20"
+    },
+    {
+      "field_name": "Date of Notice of Loss",
+      "field_notes": "This field can be used only in the following matter types (templates):  Litigation/Dispute, 3rd-Party Actions (e.g. Subpoenas), and \"Other.\"",
+      "field_type": "Date",
+      "sample_data": "2023-04-25"
+    },
+    {
+      "field_name": "Case Assessment Memo",
+      "field_notes": "This is a field that allows a user to attach a file.  This field can be used only in the following matter types (templates):  Litigation/Dispute, 3rd-Party Actions (e.g. Subpoenas), and \"Other.\"",
+      "field_type": "File Attachment",
+      "sample_data": "case_assessment_memo.pdf"
+    },
+    {
+      "field_name": "Trial Strategy Memo",
+      "field_notes": "This is a field that allows a user to attach a file.  This field can be used only in the following matter types (templates):  Litigation/Dispute, 3rd-Party Actions (e.g. Subpoenas), and \"Other.\"",
+      "field_type": "File Attachment",
+      "sample_data": "trial_strategy_memo.pdf"
+    },
+    {
+      "field_name": "Patent Type",
+      "field_notes": "Available in all matter types (templates).",
+      "field_type": "List",
+      "sample_data": "Utility Patent"
+    },
+    {
+      "field_name": "Inventor(s)",
+      "field_notes": "Available in all matter types (templates).",
+      "field_type": "Text",
+      "sample_data": "John Inventor, Jane Inventor"
+    },
+    {
+      "field_name": "Owner (record title holder)",
+      "field_notes": "Available in all matter types (templates).",
+      "field_type": "Text",
+      "sample_data": "Acme Corp."
+    },
+    {
+      "field_name": "Classes of Goods-Services",
+      "field_notes": "Available in all matter types (templates).",
+      "field_type": "Other",
+      "sample_data": "Class 1, Class 2"
+    },
+    {
+      "field_name": "Design Mark/Patent attachment",
+      "field_notes": "Available in all matter types (templates).",
+      "field_type": "File Attachment",
+      "sample_data": "design_mark_attachment.pdf"
+    },
+    {
+      "field_name": "Case Number",
+      "field_notes": "In \"Litigation/Dispute\" matter type (template), the field label is \"Case Number.\" In \"Filings\" matter type (template), the field label is \"Application Number.\"",
+      "field_type": "Text",
+      "sample_data": "CA123456"
+    },
+    {
+      "field_name": "Filing Date",
+      "field_notes": "This field is available only for \"Litigation/Dispute\", \"Filings\" (e.g. Patent Prosecutions), 3rd Party, and Miscellaneous/Other matter types (templates).",
+      "field_type": "Date",
+      "sample_data": "2023-02-10"
+    },
+    {
+      "field_name": "First Use/Disclosure Date",
+      "field_notes": "Available only in the \"Filings\" matter type (template) (e.g. Trademark Registrations).",
+      "field_type": "Date",
+      "sample_data": "2023-03-01"
+    },
+    {
+      "field_name": "Affidavit of Use Filing Date",
+      "field_notes": "Available only in the \"Filings\" matter type (template) (e.g. Trademark Registrations).",
+      "field_type": "Date",
+      "sample_data": "2023-03-15"
+    },
+    {
+      "field_name": "Status",
+      "field_notes": "This field is a customizable pick list.  It is available only in the \"Filings\" matter type (template) (e.g. Patent Prosecutions).",
+      "field_type": "List",
+      "sample_data": "Pending"
+    },
+    {
+      "field_name": "Claim/Registration Number",
+      "field_notes": "This field is available only for \"Litigation/Dispute\" and \"Filings\" (e.g. Patent Prosecutions) matter types (templates). For Litigation/Dispute matter types (templates), the field label is \"Claim Number(s).\" In Patent Prosecution matter type (template), the field label is \"Patent Number.\" In Trademark Registration matter type (template), the field label is \"Registration Number.\"",
+      "field_type": "Text",
+      "sample_data": "USPTO1234567"
+    },
+    {
+      "field_name": "Registration Date",
+      "field_notes": "It is available only in the \"Filings\" matter type (template) (e.g. Patent Prosecutions). In Patent Prosecution matter type (template), the field label is \"Issue Date.\" In Trademark Registration matter type (template), the field label is \"Registration Date.\"",
+      "field_type": "Date",
+      "sample_data": "2023-04-01"
+    },
+    {
+      "field_name": "Serial/Reel Number",
+      "field_notes": "Available only in the \"Filings\" matter type (template) (e.g. Trademark Registrations).",
+      "field_type": "Text",
+      "sample_data": "Reel 12345, Frame 67890"
+    },
+    {
+      "field_name": "Renewal Date",
+      "field_notes": "It is available only in the \"Filings\" matter type (template) (e.g. Patent Prosecutions). In Patent Prosecution matter type (template), the field label is \"Expiration Date.\" In Trademark Registration matter type (template), the field label is \"Renewal Date.\"",
+      "field_type": "Date",
+      "sample_data": "2023-12-31"
+    },
+    {
+      "field_name": "Notes/Misc",
+      "field_notes": "Field can be used in all matter types (templates).",
+      "field_type": "Text",
+      "sample_data": "Additional notes or miscellaneous information."
+    },
+    {
+      "field_name": "Patent Title",
+      "field_notes": "Enter the patent title exactly as it appears on the patent application.",
+      "field_type": "Text",
+      "sample_data": "Invention Title"
+    },
+    {
+      "field_name": "Amount Claimed Against Company (Exposure)",
+      "field_notes": "This field can be used only in Litigation/Dispute matter types (templates).",
+      "field_type": "Currency",
+      "sample_data": "1000000"
+    },
+    {
+      "field_name": "Company Cost Estimate",
+      "field_notes": "This actually consists of several fields in the matter profile.  For a Litigation/Dispute matter, if the liability exposure is setup for FAS 5, the fields will be (1) the probability of liability (radio button selection), (2) whether the liability is estimable (yes or no), and (3) the amount of the liability.  If the liability exposure is setup for \"Standard\" exposure, the fields are the Estimate of Exposure and the Estimate of the Maximum Potential Exposure.  For matter types (templates) other than Litigation/Dispute, the field is labeled \"Estimate of Costs Resulting from Matter.\"",
+      "field_type": "Other",
+      "sample_data": "Cost estimate details here"
+    },
+    {
+      "field_name": "Description of Potential Asset Transfer",
+      "field_notes": "Use this field to track exposure of non-monetary items.",
+      "field_type": "Text",
+      "sample_data": "Description of potential asset transfer."
+    },
+    {
+      "field_name": "Exposure Settlement Authority",
+      "field_notes": "This field can be used to communicate settlement authority regarding exposure amounts to outside counsel.  It is available only in Litigation/Dispute matters.",
+      "field_type": "Currency",
+      "sample_data": "500000"
+    },
+    {
+      "field_name": "Reserve Amount",
+      "field_notes": "This field can be used only in Litigation/Dispute matter types (templates).",
+      "field_type": "Currency",
+      "sample_data": "250000"
+    },
+    {
+      "field_name": "Insurer/Reinsurer",
+      "field_notes": "This field is available only in Litigation/Dispute matters. It is a special, customizable pick list that allows users to select multiple choices.  For example, the pick list could contain a list of the insurance policies (e.g. E&O, CGL, Worker's Comp. etc.).  Some or all of these selections can be selected for a given case.",
+      "field_type": "Multi-Pick List",
+      "sample_data": "E&O Insurance, General Liability"
+    },
+    {
+      "field_name": "Firm Cost Estimate",
+      "field_notes": "This actually consists of several fields in the matter profile.  For a Litigation/Dispute matter, if the liability exposure is setup for FAS 5, the fields will be (1) the probability of liability (radio button selection), (2) whether the liability is estimable (yes or no), and (3) the amount of the liability.  If the liability exposure is setup for \"Standard\" exposure, the fields are the Estimate of Exposure and the Estimate of the Maximum Potential Exposure.  For matter types (templates) other than Litigation/Dispute, the field is labeled \"Estimate of Costs Resulting from Matter.\"",
+      "field_type": "Other",
+      "sample_data": "Firm cost estimate details here"
+    },
+    {
+      "field_name": "Amount Claimed by Company (Recovery)",
+      "field_notes": "This field can be used only in Litigation/Dispute matter types (templates).",
+      "field_type": "Currency",
+      "sample_data": "200000"
+    },
+    {
+      "field_name": "Company Revenue Estimate",
+      "field_notes": "For Litigation/Dispute matter types (templates), this is actually two fields:  Estimate of Recovery, and Estimate of Maximum Potential Recovery.  For all other matter types (templates), it is just one field labeled \"Estimate of Revenue Resulting from Matter.",
+      "field_type": "Other",
+      "sample_data": "Revenue estimate details here"
+    },
+    {
+      "field_name": "Description of Potential Asset Received",
+      "field_notes": "Use this field to track exposure of non-monetary items.",
+      "field_type": "Text",
+      "sample_data": "Description of potential asset received."
+    },
+    {
+      "field_name": "Firm Revenue Estimate",
+      "field_notes": "For Litigation/Dispute matter types (templates), this is actually two fields:  Estimate of Recovery, and Estimate of Maximum Potential Recovery.  For all other matter types (templates), it is just one field labeled \"Estimate of Revenue Resulting from Matter.",
+      "field_type": "Other",
+      "sample_data": "Firm revenue estimate details here"
+    },
+    {
+      "field_name": "Recovery Settlement Authority",
+      "field_notes": "This field can be used to communicate settlement authority regarding recovery amounts to outside counsel.  It is available only in Litigation/Dispute matters.",
+      "field_type": "Currency",
+      "sample_data": "750000"
+    },
+    {
+      "field_name": "Estimated Timing of Resolution",
+      "field_notes": "This is available only in the Litigation/Dispute matter type (template).",
+      "field_type": "List",
+      "sample_data": "6-12 months"
+    },
+    {
+      "field_name": "Estimated Date of Resolution",
+      "field_notes": "",
+      "field_type": "Date",
+      "sample_data": "2024-01-15"
+    },
+    {
+      "field_name": "Budget Approval Route",
+      "field_notes": "Select an approval route.",
+      "field_type": "List",
+      "sample_data": "Manager Approval"
+    },
+    {
+      "field_name": "Matter Complexity",
+      "field_notes": "",
+      "field_type": "List",
+      "sample_data": "High"
+    },
+    {
+      "field_name": "Form of Resolution",
+      "field_notes": "",
+      "field_type": "List",
+      "sample_data": "Settlement"
+    },
+    {
+      "field_name": "Timing of Resolution",
+      "field_notes": "This is available only in the Litigation/Dispute and Filings matter types (templates).",
+      "field_type": "List",
+      "sample_data": "Post-Filing"
+    },
+    {
+      "field_name": "Date Resolved",
+      "field_notes": "This field is required in order to close a matter.",
+      "field_type": "Date",
+      "sample_data": "2024-02-01"
+    },
+    {
+      "field_name": "Description of Resolution",
+      "field_notes": "",
+      "field_type": "Text",
+      "sample_data": "Description of the resolution."
+    },
+    {
+      "field_name": "Lessons Learned",
+      "field_notes": "",
+      "field_type": "Text",
+      "sample_data": "Lessons learned from the matter."
+    },
+    {
+      "field_name": "Amount of Cost Resulting from Matter",
+      "field_notes": "This field is also displayed and editable while the matter is open, so that partial settlements or judgments can be entered.",
+      "field_type": "Currency",
+      "sample_data": "50000"
+    },
+    {
+      "field_name": "Other Assets/Rights Affected",
+      "field_notes": "This field is also displayed and editable while the matter is open.",
+      "field_type": "Text",
+      "sample_data": "Description of other assets or rights affected."
+    },
+    {
+      "field_name": "Amount of Revenue Resulting from Matter",
+      "field_notes": "This field is also displayed and editable while the matter is open, so that partial settlements or judgments can be entered.",
+      "field_type": "Currency",
+      "sample_data": "75000"
+    },
+    {
+      "field_name": "Other Assets/Rights Received",
+      "field_notes": "This field is also displayed and editable while the matter is open.",
+      "field_type": "Text",
+      "sample_data": "Description of other assets or rights received."
+    },
+    {
+      "field_name": "Number of days to post final invoice",
+      "field_notes": "This specifies the number of days after the matter is closed that firms can post invoices.",
+      "field_type": "Number",
+      "sample_data": "30"
+    },
+    {
+      "field_name": "Paper file location/reference",
+      "field_notes": "This field is also displayed and editable when the matter is open.",
+      "field_type": "Text",
+      "sample_data": "Location of the paper file."
+    },
+    {
+      "field_name": "Person Closing Matter",
+      "field_notes": "This is not selectable, but is automatically filled in by Tracker when a matter is closed.",
+      "field_type": "User",
+      "sample_data": "jdoe"
+    },
+    {
+      "field_name": "Number of days to update matter data",
+      "field_notes": "This specifies the number of days after the matter is closed that matter information can be updated.",
+      "field_type": "Number",
+      "sample_data": "60"
+    },
+    {
+      "field_name": "Requestor Description",
+      "field_notes": "The description of the legal matter as it was entered in Legal Center. In Legal Tracker, this description may be included in the Description field for the matter.",
+      "field_type": "Text",
+      "sample_data": "Requestor description of the matter."
+    },
+    {
+      "field_name": "Requestor Name",
+      "field_notes": "The first and last name of the Legal Center user who created and submitted the legal matter request in Legal Center.",
+      "field_type": "Text",
+      "sample_data": "Jane Requestor"
+    },
+    {
+      "field_name": "Requestor Email",
+      "field_notes": "The email address of the Legal Center user who created and submitted the legal matter request in Legal Center.",
+      "field_type": "Text",
+      "sample_data": "jane.requestor@example.com"
+    },
+    {
+      "field_name": "Requestor Phone",
+      "field_notes": "The phone number of the Legal Center user who created and submitted the legal matter request in Legal Center.",
+      "field_type": "Text",
+      "sample_data": "(555) 123-4567"
+    },
+    {
+      "field_name": "Requestor ID",
+      "field_notes": "The Legal Center user who initiated the request.",
+      "field_type": "Text",
+      "sample_data": "REQ123456"
+    },
+    {
+      "field_name": "Additional Notes",
+      "field_notes": "The information entered in Legal Center that is specific to the Legal Tracker matter.",
+      "field_type": "Text",
+      "sample_data": "Any additional notes or information."
+    },
+    {
+      "field_name": "Date of Incident",
+      "field_notes": "The date of the incident as it was entered in Legal Center.",
+      "field_type": "Date",
+      "sample_data": "2023-01-10"
+    },
+    {
+      "field_name": "Legal Center Matter ID",
+      "field_notes": "The matter identifier that was generated in Legal Center.",
+      "field_type": "Text",
+      "sample_data": "LC-2023-001"
+    },
+    {
+      "field_name": "Legal Center Attachments",
+      "field_notes": "Any files that were attached to the legal matter request in Legal Center.",
+      "field_type": "Other",
+      "sample_data": "attachment1.pdf, attachment2.jpg"
+    },
+    {
+      "field_name": "Legal Center Country",
+      "field_notes": "The country of the incident as it was entered in Legal Center.",
+      "field_type": "List",
+      "sample_data": "United States"
+    },
+    {
+      "field_name": "Legal Center State",
+      "field_notes": "The state or province/region of the incident as it was entered in Legal Center.",
+      "field_type": "List",
+      "sample_data": "California"
+    },
+    {
+      "field_name": "Invoice Approval Route",
+      "field_notes": "This field is required to be completed in all matters.",
+      "field_type": "List",
+      "sample_data": "Standard Approval"
+    },
+    {
+      "field_name": "AP Route",
+      "field_notes": "This field is required to be completed in all matters.",
+      "field_type": "List",
+      "sample_data": "Accounts Payable"
+    },
+    {
+      "field_name": "Pre-configured allocation",
+      "field_notes": "If the matter shares from a pre-configured accounting code allocations then this field displays the name of the pre-configured allocations.",
+      "field_type": "List",
+      "sample_data": "Allocation 1"
+    },
+    {
+      "field_name": "Default Accounting Code Allocations",
+      "field_notes": "This field is required to be completed in all matters.  It is composed of multiple accounting code fields.",
+      "field_type": "Other",
+      "sample_data": "Accounting code details here"
+    },
+    {
+      "field_name": "Billed To Entity",
+      "field_notes": "This field is a configurable list of names with addresses and tax IDs. It can be used to specify the corporate entities that a vendor can bill to for the matter when submitting LEDES 1998bi invoices. It is typically used for tax tracking and recoupment purposes.",
+      "field_type": "List",
+      "sample_data": "Acme Corp."
+    },
+    {
+      "field_name": "Tax Configuration",
+      "field_notes": "If the matter shares from a Tax Configuration then this field displays the name of the Tax Configuration.",
+      "field_type": "List",
+      "sample_data": "Tax Config 1"
+    },
+    {
+      "field_name": "UTBMS Audit Set",
+      "field_notes": "This field is required to be completed in all matters.",
+      "field_type": "List",
+      "sample_data": "Audit Set 1"
+    },
+    {
+      "field_name": "Proforma Invoice Approval Route",
+      "field_notes": "Select an approval route.",
+      "field_type": "List",
+      "sample_data": "Manager Approval"
+    },
+    {
+      "field_name": "Matter Pricing Visibility",
+      "field_notes": "Matter Pricing Visibility",
+      "field_type": "List",
+      "sample_data": "Visible to All"
+    }
+  ]
+}

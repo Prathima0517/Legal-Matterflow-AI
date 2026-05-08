@@ -1,0 +1,43 @@
+{
+  "legal_document_templates": [
+    "Litigation/Dispute (New)",
+    "Transactions & Deals (New)",
+    "Advice & Counsel (New)",
+    "Filings (New)",
+    "3rd Party Actions (New)",
+    "Miscellaneous (New)",
+    "Outlook Add-in (New)",
+    "Legal Center (New)",
+    "N/A - Matter Group (New)",
+    "All Matter Types (Templates)",
+    "Potential Dispute",
+    "fbillClaim",
+    "Litigation",
+    "Regulatory",
+    "Transaction",
+    "Advice",
+    "TM Registration",
+    "Patent Prosecution",
+    "IP Other",
+    "Subpoena",
+    "Other",
+    "Outlook Add-in Template",
+    "Legal Center Template",
+    "MP_ON_Litigation",
+    "litigation tzamudio",
+    "tzamudio transaction",
+    "tzamudio litigation",
+    "tzamudio litigation files",
+    "tzamudio litigation accrual",
+    "CustomRichTextAreaField",
+    "tzamudio tc p2-4-57 294476 litigation",
+    "Require OCE upon matter closure",
+    "Litigation/Dispute"
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-08-30",
+    "total_templates": 30,
+    "description": "Legal document classification templates for AI processing"
+  }
+}
