@@ -1,0 +1,52 @@
+image: node:20
+
+stages:
+  - build
+  - deploy
+
+cache:
+  key:
+    files:
+      - package-lock.json
+  paths:
+    - node_modules/
+  policy: pull-push
+
+build:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - npm install --quiet
+    - npm run build
+    - echo "Build complete. Contents of the dist/ directory:"
+    - ls -al dist/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+deploy:
+  stage: deploy
+  needs:
+    - job: build
+      artifacts: true
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"
+      when: on_success
+  script:
+    - echo "Starting deployment to AWS..."
+    - apt-get update && apt-get install -y unzip zip
+    - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    - unzip awscliv2.zip
+    - ./aws/install
+    - aws --version
+    - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+    - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    - export AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+    - zip -r deploy.zip dist/
+    - export VERSION_LABEL="v-${CI_COMMIT_SHORT_SHA}"
+    - export S3_KEY="deploy-${VERSION_LABEL}.zip"
+    - aws s3 cp deploy.zip s3://$S3_BUCKET_NAME/$S3_KEY
+    - aws elasticbeanstalk create-application-version --application-name $AWS_EB_APP_NAME --version-label $VERSION_LABEL --source-bundle S3Bucket=$S3_BUCKET_NAME,S3Key=$S3_KEY
+    - aws elasticbeanstalk update-environment --application-name $AWS_EB_APP_NAME --environment-name $AWS_EB_ENV_NAME --version-label $VERSION_LABEL
+    - echo "Deployment complete!"
